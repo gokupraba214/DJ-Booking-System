@@ -7,17 +7,17 @@ include('includes/dbconnection.php');
   {
   	$bid=$_GET['bookid'];
   	
- $name=$_POST['name'];
-  $mobnum=$_POST['mobnum'];
- $email=$_POST['email'];
- $edate=$_POST['edate'];
- $est=$_POST['est'];
- $eetime=$_POST['eetime'];
- $vaddress=$_POST['vaddress'];
- $eventtype=$_POST['eventtype'];
- $totalp=$_POST['totalp'];
- $addinfo=$_POST['addinfo'];
- $bookingid=mt_rand(100000000, 999999999);
+$name=$_POST['name'];
+$mobnum=$_POST['mobnum'];
+$email=$_POST['email'];
+$edate=$_POST['edate'];
+$est=$_POST['est'];
+$eetime=$_POST['eetime'];
+$vaddress=$_POST['vaddress'];
+$eventtype=$_POST['eventtype'];
+$totalp=$_POST['totalp'];
+$addinfo=$_POST['addinfo'];
+$bookingid=mt_rand(100000000, 999999999);
 $sql="insert into tblbooking(BookingID,ServiceID,Name,MobileNumber,Email,EventDate,EventStartingtime,EventEndingtime,VenueAddress,EventType,TotalP,AdditionalInformation)values(:bookingid,:bid,:name,:mobnum,:email,:edate,:est,:eetime,:vaddress,:eventtype,:totalp,:addinfo)";
 $query=$dbh->prepare($sql);
 $query->bindParam(':bookingid',$bookingid,PDO::PARAM_STR);
